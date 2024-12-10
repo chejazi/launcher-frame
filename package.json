@@ -1,0 +1,22 @@
+{
+  "name": "frames",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "frog vercel-build",
+    "dev": "frog dev",
+    "deploy": "vercel"
+  },
+  "dependencies": {
+    "@neynar/nodejs-sdk": "^2.0.5",
+    "dotenv": "^16.4.7",
+    "ethers": "^6.13.4",
+    "frog": "0.9.4",
+    "hono": "^4"
+  },
+  "devDependencies": {
+    "tsx": "^4.7.1",
+    "typescript": "^5.3.3",
+    "vercel": "^32.4.1"
+  }
+}
