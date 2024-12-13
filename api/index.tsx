@@ -7,6 +7,7 @@ import axios from 'axios';
 import { fcLauncherAbi, fcLauncherAddress } from '../contracts/abi-fc-launcher.js';
 import { tokenAbi } from '../contracts/abi-token.js';
 import 'dotenv/config';
+import sdk from '@farcaster/frame-sdk';
 
 const NULL_ADDRESS = '0x0000000000000000000000000000000000000000';
 const provider = new ethers.AlchemyProvider(8453, process.env.ALCHEMY_KEY);
@@ -18,7 +19,9 @@ const getTicker = (text) => {
   }
 };
 
-const lookupCast = async (identifier) => {
+const testCast = "https://warpcast.com/owl/0x6864e592";
+
+const lookupCast = async (identifier = testCast) => {
   const res = await axios.get(`https://api.neynar.com/v2/farcaster/cast?type=hash&identifier=${identifier}`, {
     headers: {
       'accept': 'application/json',
@@ -107,7 +110,8 @@ const sectionStyles = {
 const sectionHeaderStyles = Object.assign({}, sectionStyles, { fontSize: 60, paddingTop: '30px', marginTop: 30 });
 
 app.frame('/:castHash', async (c) => {
-  const castHash = c.req.param('castHash');
+  const castHash = c.req.param('castHash') || testCast;
+  console.log('casthash',castHash);
   if (!castHash) {
     return c.res({
       image: (

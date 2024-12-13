@@ -1,4 +1,4 @@
-export const fcLauncherAddress = '0xa8a3E70c029CE2F53a90D7a6819b1cF40DfADCB4';
+export const fcLauncherAddress = '0x7d861aC47A5d32172aE2E0f9F86f7C39DC1493fC';
 export const fcLauncherAbi = [
   {
     "inputs": [

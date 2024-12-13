@@ -8,6 +8,7 @@
     "deploy": "vercel"
   },
   "dependencies": {
+    "@farcaster/frame-sdk": "^0.0.16",
     "@neynar/nodejs-sdk": "^2.0.5",
     "dotenv": "^16.4.7",
     "ethers": "^6.13.4",
